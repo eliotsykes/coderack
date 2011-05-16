@@ -1,0 +1,15 @@
+---
+development: &defaults
+  adapter:  mysql2
+  database: coderack
+  host: localhost
+  encoding: utf8
+  username: root
+  password:
+
+test:
+  <<: *defaults
+  database: coderack_test
+
+production:
+  <<: *defaults

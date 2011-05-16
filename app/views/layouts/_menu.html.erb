@@ -1,0 +1,16 @@
+<li><%= menu_item "Home", root_path, :home %></li>
+<li>
+  <%= menu_item "Middlewares", middlewares_path, :middlewares %>
+  <ul class="submenu" style="display: none">
+    <li><%= link_to 'Browse all', middlewares_path %></li>
+    <li><%= link_to 'My middlewares', mine_middlewares_path %></li>
+    <li><%= link_to 'Add middleware', new_middleware_path %></li>
+  </ul>
+</li>
+<li>
+  <%= menu_item "About", about_path, :about %>
+  <ul class="submenu" style="display: none">
+    <li><%= link_to 'What is this?', about_path %></li>
+    <li><%= link_to 'Contest archive', archive_path %></li>
+  </ul>
+</li>

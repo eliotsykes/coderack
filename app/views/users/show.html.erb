@@ -1,0 +1,33 @@
+<div class="user_page">
+  <div class="author">
+    <img src="<%= gravatar_url(@user.email) %>" alt="<%= @user.name %>" />
+  </div>
+
+  <h2>Rack middleware submitted by <%= @user.name %></h2>
+
+  <%= render 'middlewares/sorting' %>
+
+  <div class="actions">
+    <% unless @user.github_username.blank? %>
+      <%= link_to(image_tag("icons/cog.png") + " GitHub page", user_github_page_url(@user)) %>
+    <% end %>
+    <% unless @user.twitter_username.blank? %>
+      <%= link_to(image_tag("icons/twitter.png") + " Twitter profile", twitter_profile_url(@user)) %>
+    <% end %>
+  </div>
+
+  <% if @middlewares.size > 0 %>
+    <div class="middleware_list">
+      <%= render :partial => "middlewares/middleware", :collection => @middlewares, :locals => { :badge => true } %>
+    </div>
+  <% else %>
+    <p>
+      <% if @user == current_user %>
+        You haven't submitted any middlewares yet.
+        Don't wait, <%= link_to 'submit', new_middleware_path %> some cool piece of Rack code!
+      <% else %>
+        User <%= @user.name %> hasn't submitted any middlewares yet.
+      <% end %>
+    </p>
+  <% end %>
+</div>

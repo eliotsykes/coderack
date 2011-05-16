@@ -1,0 +1,26 @@
+development: &defaults
+  site_url: http://localhost:3000
+  disqus_id: coderackstaging
+  google_analytics_id:
+  cookie_secret_token: random_string_at_least_30_characters_long
+  bitly:
+    username: <bitly_user>
+    key: <bitly_key>
+  twitter:
+    login: <twitter_user>
+    consumer:
+      key: <twitter_consumer_key>
+      secret: <twitter_consumer_secret>
+    access:
+      key: <twitter_access_key>
+      secret: <twitter_access_secret>
+
+test:
+  <<: *defaults
+  bitly:
+    username:
+    key:
+  twitter:
+    login:
+    consumer:
+    access:

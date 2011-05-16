@@ -1,0 +1,53 @@
+<% content_for :headline do %>
+  <div id="teaser">
+    <p>CodeRack: a warm place to hang your code</p>
+  </div>
+<% end %>
+
+<div id="left_column">
+  <div class="home">
+    <h3>Welcome to CodeRack!</h3>
+    
+    <p>
+      In 2009 the team at <%= link_to 'Lunar Logic Polska', 'http://lunarlogicpolska.com' %>
+      ran a competition to find
+      the best Rack middleware. The competition was a great success,
+      attracting entries from around the world.
+    </p>
+    
+    <p>
+      <strong>CodeRack lives on &ndash; as &ldquo;a warm place to hang your code&rdquo;!</strong>
+    </p>
+    
+    <p>
+      It was always our hope to promote Rack middlewares more generally. Our
+      goal now is to help the community share Rack middlewares, and become
+      the destination site for developers searching for useful middlewares.
+      We've redesigned the competition site and turned it into a searchable,
+      taggable, rateable listing of middlewares.
+    </p>
+    
+    <p>
+      We'll be encouraging people to contribute links to their middlewares
+      and spread the word about the site. We hope that this will be useful
+      and fun for the whole community.
+    </p>
+    
+    <p>
+      We're waiting for your feedback or suggestions. To make it easier for
+      you to help, we've open sourced the site itself and made it available
+      on <%= link_to "GitHub", "https://github.com/LunarLogicPolska/coderack" %>.
+      Feel free to fork it and send us pull requests!
+    </p>
+    
+    <p>
+      -- The CodeRack Team, LLP
+    </p>
+  </div>
+</div>
+
+<div id="right_column">
+  <%= image_tag('rack-logo.png') %>
+  <%= link_to(image_tag('follow-me.png', :class => 'twitter'), 'http://twitter.com/coderack',
+    :title => 'Follow us on Twitter') %>
+</div>

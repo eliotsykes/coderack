@@ -1,0 +1,35 @@
+<div id="left_column">
+  <div class="home">
+    <h3>Winners Announced!</h3>
+    
+    <p>The CodeRack contest has ended and the three finalists who had the highest ranking from the public voting are:</p>
+
+    <% ['First', 'Second', 'Third'].each_with_index do |place, i| %>
+      <h3><%= image_tag 'icons/award_star_gold_1.png' %> <%= place %> Place</h3>
+      <%= render 'middlewares/middleware', :middleware => @winners[i], :badge => false %>
+    <% end %>
+
+    <h3><%= image_tag 'icons/award_star_gold_3.png' %> Honorable Mention</h3>
+    <%= render 'middlewares/middleware', :middleware => @honorable_mention, :badge => false %>
+
+    <h3>You are all Rackstars!</h3>
+    <p>A hearty congratulations to all our finalists, and to the sponsors and judges who helped make the CodeRack contest such a success. We hope that you all continue to find CodeRack a great place to hang your code. Our future plans include adding tagging and searching so that coderack.org can become a great resource for developers looking for the best rack middleware solutions. </p>
+
+    <h3>CodeRack Finalists</h3>
+    
+  </div>
+
+  <div class="middleware_list">
+    <%= render :partial => 'middlewares/middleware', :collection => @middlewares, :locals => { :badge => false } %>
+  </div>
+</div>
+
+<div id="right_column">
+  <h2 class="sponsors">Sponsors:</h2>
+  <% @sponsors.shuffle.each do |sponsor| %>
+    <p>
+      <%= link_to(image_tag("partners/#{sponsor['logo']}", :alt => sponsor['alt'], :title => sponsor['alt']),
+        "http://" + sponsor['website']) %>
+    </p>
+  <% end %>
+</div>

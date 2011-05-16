@@ -1,0 +1,5 @@
+<div id="sorting">
+  Sort by:
+  <%= link_to 'Latest', sort_url('date'), :class => (@sort == 'date') ? 'selected' : '' %> |
+  <%= link_to 'Highest rated', sort_url('score'), :class => (@sort == 'score') ? 'selected' : '' %>
+</div>

@@ -1,0 +1,7 @@
+<% if finalist.finalist? && badge %>
+  <% if finalist.contest_winner? %>
+    <%= link_to "Contest winner", archive_path, :class => 'finalist winner' %>
+  <% else %>
+    <%= link_to "Contest finalist", archive_path, :class => 'finalist' %>
+  <% end %>
+<% end %>

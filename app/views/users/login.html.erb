@@ -1,0 +1,31 @@
+<h2>Sign in</h2>
+
+<p>
+  Currently we support only <a href="http://openid.net/what/">OpenID</a> authentication.
+</p>
+
+<%= form_tag(login_users_path) do %>
+  <label for="openid_identifier">
+    Please enter your OpenID provider URL
+    <span class="error"><%= flash[:warden_message] %></span>
+  </label>
+  <%= text_field_tag :openid_identifier, '', :class => "openid" %>
+  <p class="buttons"><%= submit_tag "Sign in" %></p>
+<% end %>
+
+<p class="sign-in-with">
+  <span>Your Google or Yahoo accounts can be also used for this as they act as OpenID providers.
+    Click on the icon to sign in with Google or Yahoo:</span>
+  <%= link_to(image_tag("icons/google.png", :alt => "Sign in with Google"), '#',
+        :title => "Sign in with Google", :id => "google_signin") %>
+  <%= link_to(image_tag("icons/yahoo.png", :alt => "Sign in with Yahoo"), '#',
+        :title => "Sign in with Yahoo", :id => "yahoo_signin") %>
+</p>
+
+<%= form_tag(login_users_path, :id => 'google_signin_form') do %>
+  <%= hidden_field_tag :openid_identifier, 'https://www.google.com/accounts/o8/id' %>
+<% end %>
+
+<%= form_tag(login_users_path, :id => 'yahoo_signin_form') do %>
+  <%= hidden_field_tag :openid_identifier, 'http://www.yahoo.com' %>
+<% end %>

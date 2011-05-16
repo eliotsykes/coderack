@@ -1,0 +1,27 @@
+<h2>
+  <%= raw @header_title %><%= ", page #{@page}" if @page > 1 %>
+  <%= link_to 'Submit your own!', new_middleware_path, :class => 'submit' %>
+</h2>
+
+<%= render "sorting" %>
+
+<%= form_tag(search_middlewares_path, :method => :get, :class => 'search clearfix') do %>
+  <%= text_field_tag :q %>
+  <%= submit_tag 'Search', :id => nil %>
+<% end =%>
+
+<% if @total_middleware_count > 0 %>
+  <div class="middleware_list">
+    <%= render :partial => "middleware", :collection => @middlewares, :locals => { :badge => true } %>
+  </div>
+
+  <p class="entries_count">
+    Showing middlewares <%= @offset + 1 %> to <%= @offset + @middlewares.size %> (of <%= @total_middleware_count %>).
+  </p>
+<% else %>
+  <p class="entries_count">No middlewares found.</p>
+<% end %>
+
+<div class="paginated">
+  <%= paginate @middlewares %>
+</div>

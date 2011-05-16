@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>
+      <% if @title %>
+        CodeRack: <%= @title %>
+      <% else %>
+        CodeRack
+      <% end %>
+    </title>
+
+    <meta charset="utf-8">
+    <meta name="description" content="Rack middleware directory">
+    <meta name="keywords" content="coderack, rack contest, rack competition, rack, middleware, contest, ruby">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+
+    <%= auto_discovery_link_tag :atom, middlewares_url(:format => 'xml'), :title => "Latest middlewares feed (Atom)" %>
+    <%= stylesheet_link_tag 'reset', 'grid', 'fonts', 'master', 'jquery.rating', :cache => true %>
+    <%= javascript_include_tag 'vendor/jquery', 'vendor/jquery.rating', 'application', 'middlewares', :cache => true %>
+    <%= yield :extra_scripts %>
+    <%= csrf_meta_tag %>
+
+    <% if Rails.env.development? %>
+      <script type="text/javascript">
+        var disqus_developer = 1;
+      </script>
+    <% end %>
+
+    <!--[if IE]>
+      <%= stylesheet_link_tag 'legacy' %>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div id="main" class="container_12 clearfix">
+      <div id="header" class="grid_12">
+        <ul class="subnav">
+          <%= render "layouts/user_info" %>
+        </ul>
+        <div class="nav">
+          <a href="/" class="logo">
+            <span class="title">CodeRack</span>
+            <span class="subtitle">Rack middleware directory</span>
+          </a>
+          <ul>
+            <%= render "layouts/menu" %>
+          </ul>
+        </div>
+      </div>
+      <div id="content" class="grid_12">
+        <%= yield :headline %>
+        <% if flash[:notice] %><div id="flash" class="notice"><%= flash[:notice] %></div><% end %>
+        <% if flash[:alert] %><div id="flash" class="error"><%= flash[:alert] %></div><% end %>
+        <%= yield %>
+      </div>
+      <div id="footer" class="grid_12">
+        <strong>
+          <span class="copy">&copy; 2011</span>
+          <a class="llp" href="http://lunarlogicpolska.com">Lunar Logic Polska</a>
+        </strong>
+
+        <ul>
+          <li>Need help or more information? Contact us at
+            <%= link_to 'info@coderack.org', 'mailto: info@coderack.org' %></li>
+        </ul>
+      </div>
+    </div>
+    <%= render "layouts/google_analytics" if Rails.env.production? %>
+    <%= render "layouts/woopra" if Rails.env.production? %>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+<h2>Account settings</h2>
+
+<p>Here is your account information. Feel free to update it when needed.</p>
+
+<%= form_for @user do |f| %>
+  <%= render "users/user_form", :f => f %>
+  <p class="buttons">
+    <%= submit_tag "Update" %>
+  </p>
+<% end %>

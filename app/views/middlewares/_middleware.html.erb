@@ -1,0 +1,16 @@
+<div id="middleware-<%= middleware.id %>" class="middleware summary">
+  <h3>
+    <%= link_to middleware.name, user_middleware_path(middleware.user, middleware) %>
+    <%= render 'middlewares/finalist', :finalist => middleware, :badge => badge %>
+  </h3>
+  <div class="info">
+    Added by <%= link_to middleware.user.name, user_path(middleware.user) %>
+    at <%= format_time(middleware.created_at) %>
+    <%= static_rating_stars(middleware) %>
+    <%= tags(middleware) %>
+  </div>
+  <div class="details">
+    <%= raw middleware.about %>
+  </div>
+  <div class="clear"></div>
+</div>

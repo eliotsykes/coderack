@@ -1,0 +1,11 @@
+.DS_Store
+log/*
+tmp/*
+*~
+.#*
+db/schema.rb
+nbproject
+config/application.yml
+config/database.yml
+config/deploy/*
+.bundle

@@ -1,0 +1,88 @@
+<% content_for :extra_scripts do %>
+  <script type="text/javascript" src="http://cdn.topsy.com/topsy.js?init=topsyWidgetCreator"></script>
+<% end %>
+
+<div class="middleware" data-middleware-id="<%= @middleware.slug %>">
+  <div class="retweet">
+    <div class="topsy_widget_data">
+      <!--
+        {
+          "style": "big",
+          "theme": "blue",
+          "nick": "coderack",
+          "title": "<%= @middleware.name %> - CodeRack middleware directory",
+          "url": "<%= user_middleware_url(@middleware.user, @middleware, :host => 'coderack.org') %>",
+          "shorturl_service": "bit.ly"
+        }
+      -->
+    </div>
+  </div>
+  <h3>
+    <%= link_to @middleware.name, user_middleware_path(@middleware.user, @middleware) %>
+    <%= render "finalist", :finalist => @middleware, :badge => true %>
+  </h3>
+  <div class="info">
+    Added by <%= link_to @middleware.user.name, user_path(@middleware.user) %>
+    at <%= format_time(@middleware.created_at) %>
+    <%= static_rating_stars(@middleware) %>
+    <%= tags(@middleware) %>
+  </div>
+  <%= render "voting", :middleware => @middleware %>
+  <div class="github_stats">
+    GitHub stats:
+    <div>
+      <%= image_tag 'icons/magnifier.png' %>
+      <span class="watchers"></span> watcher(s)
+    </div>
+    <div>
+      <%= image_tag 'icons/arrow_branch.png' %>
+      <span class="forks"></span> fork(s)
+    </div>
+    <div>
+      <%= image_tag 'icons/wrench.png' %>
+      <span class="last_update"></span>
+    </div>
+  </div>
+  <div class="details">
+    <div class="actions">
+      <% unless @middleware.project_page.blank? %>
+        <%= link_to(image_tag("icons/cog.png") + " GitHub page", @middleware.project_page, :class => 'github') %>
+      <% end %>
+      <% unless @middleware.gem_name.blank? %>
+        <%= link_to(image_tag("icons/ruby.png") + " Gem info", rubygems_url(@middleware)) %>
+      <% end %>
+      <% unless @middleware.gist_id.blank? %>
+        <%= link_to(image_tag("icons/script.png") + " Code on Gist", gist_url(@middleware)) %>
+      <% end %>
+      <% if authenticated? && (current_user == @middleware.user || current_user.admin?) %>
+        <% if @middleware.has_any_links? %>
+          <span class="actions_divider">&middot;</span>
+        <% end %>
+        <%= link_to(image_tag("icons/edit.png") + " Edit", edit_user_middleware_path(@middleware.user, @middleware)) %>
+        <%= link_to(image_tag("icons/remove.png") + " Remove", '#', :class => 'remove_entry') %>
+        <%= form_for @middleware, :html => { :method => 'delete', :class => 'remove_entry_form' } do end %>
+      <% end %>
+    </div>
+
+    <div class="description">
+      <h2>About</h2>
+      <%= raw @middleware.about %>
+      <% unless @middleware.details.blank? %>
+        <h2>Details</h2>
+        <%= raw @middleware.details %>
+      <% end %>
+      <h2>Usage</h2>
+      <%= raw @middleware.usage %>
+    </div>
+
+    <div id="disqus_thread"></div>
+    <%= javascript_include_tag(disqus_embed_url) %>
+
+    <noscript>
+      <%= link_to "View the discussion thread.", disqus_link_url %>
+    </noscript>
+    <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+
+  <div class="clear"></div>
+</div>

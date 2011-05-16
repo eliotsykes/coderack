@@ -1,0 +1,10 @@
+<h2>Add new middleware</h2>
+
+<%= form_for @middleware do |f| %>
+  <fieldset>
+    <%= render "middleware_form", :f => f %>
+    <p class="buttons">
+      <%= submit_tag "Submit" %>
+    </p>
+  </fieldset>
+<% end =%>

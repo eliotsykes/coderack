@@ -1,0 +1,14 @@
+<h2>New user account</h2>
+
+<p>
+  Because this is your first login into CodeRack please select your username and enter your email address.
+</p>
+  
+<%= form_for @user do |f| %>
+<fieldset>
+  <%= render "users/user_form", :f => f %>
+  <p class="buttons">
+    <%= submit_tag "Join" %>
+  </p>
+</fieldset>
+<% end =%>

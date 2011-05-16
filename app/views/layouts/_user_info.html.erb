@@ -1,0 +1,7 @@
+<% if authenticated? %>
+  <li>Logged in as <%= link_to current_user.name_was, user_path(current_user) %></li>
+  <li><%= link_to 'Account', edit_user_path(current_user) %></li>
+  <li><%= link_to "Sign out", logout_users_path %></li>
+<% else %>
+  <%= link_to "Sign in", login_users_path %>
+<% end %>

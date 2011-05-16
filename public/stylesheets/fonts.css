@@ -1,0 +1,15 @@
+@font-face {
+	font-family: Miso;
+  src: local('Miso');
+  src: local('MISO____.OTF');
+  src: url('/fonts/MISO____.OTF');
+
+}
+
+@font-face {
+	font-family: Miso;
+	font-weight: bold;
+	src: local('Miso');
+	src: local('MISO-BOL.OTF');
+	src: url('/fonts/MISO-BOL.OTF');
+}

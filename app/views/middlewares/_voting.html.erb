@@ -1,0 +1,7 @@
+<div class="rating">
+  <label>Your rating:</label>
+  <% 1.upto(5) do |n| %>
+    <input type="radio" name="rating" class="voting-star" value="<%= n %>"
+           <%= 'checked="checked" data-checked="checked"' if @users_score == n %> />
+  <% end %>
+</div>

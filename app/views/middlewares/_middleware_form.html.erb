@@ -1,0 +1,71 @@
+<p>
+  <label for="middleware_name" class="required">
+    Middleware name <%= error_on(@middleware, :name) %>
+  </label>
+  <%= f.text_field :name, :class => "name" %>
+</p>
+
+<p>
+  <label for="middleware_about_source" class="required">
+    About <span>(1-2 sentences describing the middleware; up to 500 characters)</span>
+    <%= error_on(@middleware, :about) %>
+  </label>
+  <span class="formatter">
+    <label for="middleware_about_format">formatting:</label>
+    <%= f.select :about_format, available_formats %> – no html tags!
+  </span>
+  <%= f.text_area :about_source %>
+</p>
+
+<p>
+  <label for="middleware_details_source">
+    Details <span>(longer description)</span>
+    <%= error_on(@middleware, :details) %>
+  </label>
+  <span class="formatter">
+    <label for="middleware_details_format">formatting:</label>
+    <%= f.select :details_format, available_formats %> – no html tags!
+  </span>
+  <%= f.text_area :details_source %>
+</p>
+
+<p>
+  <label for="middleware_usage_source" class="required">
+    Usage <span>(available options, how to use in app)</span>
+    <%= error_on(@middleware, :usage) %>
+  </label>
+  <span class="formatter">
+    <label for="middleware_usage_format">formatting:</label>
+    <%= f.select :usage_format, available_formats %> – no html tags!
+  </span>
+  <%= f.text_area :usage_source %>
+</p>
+
+<p>
+  <label for="middleware_project_page">
+    GitHub project page URL
+    <%= error_on(@middleware, :project_page) %>
+  </label>
+  <%= f.text_field :project_page %>
+</p>
+
+<p>
+  <label for="middleware_gem_name">
+    Name of a gem on RubyGems <span>(just the name)</span>
+    <%= error_on(@middleware, :gem_name) %>
+  </label>
+  <%= f.text_field :gem_name %>
+</p>
+
+<p>
+  <label for="middleware_gist_id">
+    Gist containing middleware code <span>(id or URL)</span>
+    <%= error_on(@middleware, :gist_id) %>
+  </label>
+  <%= f.text_field :gist_id %>
+</p>
+
+<p>
+  <label for="middleware_tag_names">Tags <span>(comma separated)</span></label>
+  <%= f.text_field :tag_names %>
+</p>
