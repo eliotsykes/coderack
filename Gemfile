@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.7'
+gem 'rails', '3.0.19'
 gem 'mysql2', '~> 0.2.3'
 gem "mongrel", "1.2.0.pre2"
 
@@ -11,7 +11,7 @@ gem "rack-openid"
 gem "rack-noie", :require => "noie"
 gem "rdiscount"
 gem "RedCloth"
-gem "twitter", "0.9.8"
+gem "twitter"
 gem "oauth", "0.4.2"
 gem "webrat", "0.7"
 gem 'faker'
