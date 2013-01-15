@@ -50,10 +50,11 @@ GEM
     diff-lcs (1.1.3)
     erubis (2.6.6)
       abstract (>= 1.0.0)
-    factory_girl (1.3.3)
-    factory_girl_rails (1.0)
-      factory_girl (~> 1.3)
-      rails (>= 3.0.0.beta4)
+    factory_girl (4.1.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.1.0)
+      factory_girl (~> 4.1.0)
+      railties (>= 3.0.0)
     faker (1.1.2)
       i18n (~> 0.5)
     faraday (0.8.4)
@@ -135,10 +136,6 @@ GEM
     rdiscount (1.6.8)
     rdoc (3.12)
       json (~> 1.4)
-    rspec (2.12.0)
-      rspec-core (~> 2.12.0)
-      rspec-expectations (~> 2.12.0)
-      rspec-mocks (~> 2.12.0)
     rspec-core (2.12.2)
     rspec-expectations (2.12.1)
       diff-lcs (~> 1.1.3)
@@ -189,7 +186,7 @@ DEPENDENCIES
   bitly
   capistrano
   capistrano-ext
-  factory_girl_rails (= 1.0)
+  factory_girl_rails
   faker
   jslint_on_rails
   kaminari
@@ -203,8 +200,7 @@ DEPENDENCIES
   rack-revision-info (>= 0.3.7)
   rails (= 3.0.19)
   rdiscount
-  rspec (~> 2.5)
-  rspec-rails (~> 2.5)
+  rspec-rails
   ruby-debug19
   twitter
   warden

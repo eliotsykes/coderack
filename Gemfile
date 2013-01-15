@@ -24,9 +24,8 @@ group :staging do
 end
 
 group :development, :test do
-  gem "rspec", '~> 2.5'
-  gem "rspec-rails", '~> 2.5'
-  gem "factory_girl_rails", "1.0"
+  gem "rspec-rails"
+  gem "factory_girl_rails"
   gem "mocha"
   gem 'jslint_on_rails'
   if RUBY_VERSION.include?('1.9')

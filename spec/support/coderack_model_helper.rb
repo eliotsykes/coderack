@@ -12,11 +12,11 @@ class ActiveRecord::Base
     end
 
     def gen(*args)
-      Factory.create(*parse_factory_arguments(args))
+      FactoryGirl.create(*parse_factory_arguments(args))
     end
 
     def prepare(*args)
-      Factory.build(*parse_factory_arguments(args))
+      FactoryGirl.build(*parse_factory_arguments(args))
     end
 
     def pick
@@ -29,7 +29,7 @@ class ActiveRecord::Base
     end
 
     def prepare_hash(*args)
-      Factory.attributes_for(*parse_factory_arguments(args))
+      FactoryGirl.attributes_for(*parse_factory_arguments(args))
     end
 
   end
