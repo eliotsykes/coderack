@@ -26,7 +26,8 @@ end
 group :development, :test do
   gem "rspec-rails"
   gem "factory_girl_rails"
-  gem "mocha"
+  gem "mocha", :require => false
+  gem 'rspec-rails-mocha', :require => false
   gem 'jslint_on_rails'
   if RUBY_VERSION.include?('1.9')
     gem 'ruby-debug19'
