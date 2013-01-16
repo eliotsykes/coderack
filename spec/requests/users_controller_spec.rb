@@ -45,7 +45,7 @@ describe UsersController do
     it "should ignore admin field" do
       UsersController.any_instance.stubs(:session => { :identity_url => 'http://zx.cv' })
       post(users_path, :user => { :name => 'asd', :email => 'asd@zx.cv', :admin => '1' })
-      u = User.last
+      u = User.where(:email => 'asd@zx.cv').first
       u.email.should == 'asd@zx.cv'
       u.should_not be_an_admin
     end

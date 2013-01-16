@@ -62,7 +62,7 @@ describe MiddlewaresController do
 
   describe "#edit" do
     
-    before(:all) do
+    before do
       @middleware = Middleware.gen
     end
 
@@ -97,7 +97,7 @@ describe MiddlewaresController do
     
     it "should be successful for logged in user" do
       login_as(User.gen)
-      attrs = Factory.attributes_for(:middleware)
+      attrs = FactoryGirl.attributes_for(:middleware)
       post(middlewares_path, :middleware => attrs)
       m = Middleware.order('id DESC').first
       response.should redirect_to(user_middleware_path(m.user, m))
@@ -115,7 +115,7 @@ describe MiddlewaresController do
       login_as(me)
       lambda {
         lambda {
-          attrs = Factory.attributes_for(:middleware)
+          attrs = FactoryGirl.attributes_for(:middleware)
           attrs[:user_id] = him.id
           post(middlewares_path, :middleware => attrs)
           m = Middleware.order('id DESC').first
@@ -128,7 +128,7 @@ describe MiddlewaresController do
   
   describe "#update" do
     
-    before(:all) do
+    before do
       @middleware = Middleware.gen
     end
     
@@ -161,7 +161,7 @@ describe MiddlewaresController do
       login_as(@middleware.user)
       put(user_middleware_path(@middleware.user, @middleware),
         :middleware => { :name => 'changed', :user_id => User.gen.id })
-      response.should redirect_to(user_middleware_path(@middleware.user, @middleware))
+      response.should redirect_to(user_middleware_path(@middleware.user, @middleware.reload))
       Middleware.find_by_id(@middleware.id).user_id.should == @middleware.user.id
     end
     
@@ -219,7 +219,7 @@ describe MiddlewaresController do
 
   describe "#vote" do
 
-    before :each do
+    before do
       @middleware = Middleware.gen
       @first_voter = Voter.gen
       @first_vote = @middleware.votes.create :voter => @first_voter, :score => 2.0

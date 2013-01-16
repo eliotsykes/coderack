@@ -3,7 +3,7 @@ module Coderack
     module Matchers
       def self.included(base)
         [:bad_request, :unauthorized].each do |st|
-          Rspec::Matchers.define(:"be_#{st}") do
+          RSpec::Matchers.define(:"be_#{st}") do
             expected_status = Rack::Utils::SYMBOL_TO_STATUS_CODE[st]
 
             match do |rack|
@@ -23,7 +23,7 @@ module Coderack
           end
         end
 
-        Rspec::Matchers.define("redirect_to_login_page") do
+        RSpec::Matchers.define("redirect_to_login_page") do
           match do |response|
             match_unless_raises ::Test::Unit::AssertionFailedError do |_|
               assert_redirected_to(login_users_path)
