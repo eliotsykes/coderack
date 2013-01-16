@@ -1,12 +1,14 @@
 require 'capistrano/ext/multistage'
 require 'bundler/capistrano'
 
+require File.expand_path('config/rvm_capistrano')
+
 set :application, "coderack"
 set :repository, "git://github.com/LunarLogicPolska/coderack.git"
 set :scm, :git
 set :keep_releases, 10
 set :use_sudo, false
-
+set :rvm_ruby_string, '1.8.7'
 
 after 'deploy', 'deploy:cleanup'
 after 'deploy:migrations', 'deploy:cleanup'
