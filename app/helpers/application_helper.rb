@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def static_rating_stars(middleware)
-    html = "".html_safe
+    html = ""
     rating = middleware.average_score_rounded(0.5)
     html << image_tag('star_small.png') * (rating.to_i)
     html << image_tag('star_small_half.png') if rating > rating.to_i
@@ -11,7 +11,7 @@ module ApplicationHelper
     else
       "No votes yet"
     end
-    content_tag :span, html, :class => 'static_rating', :title => info
+    content_tag :span, html.html_safe, :class => 'static_rating', :title => info
   end
 
   def tags(middleware)
