@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.19'
+gem 'rails', '~> 3.0.19'
 gem 'mysql2', '~> 0.2.3'
 gem "mongrel", "1.2.0.pre2"
 
