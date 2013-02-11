@@ -1,8 +1,7 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~> 3.0.19'
+gem 'rails', '~> 3.1.11'
 gem 'mysql2', '~> 0.2.3'
-gem "mongrel", "1.2.0.pre2"
 
 gem "warden"
 gem "warden-openid", "0.1.0"
@@ -33,4 +32,5 @@ end
 group :development do
   gem 'capistrano'
   gem 'capistrano-ext'
+  gem "mongrel", "1.2.0.pre2"
 end
