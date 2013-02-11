@@ -8,7 +8,7 @@ set :repository, "git://github.com/LunarLogicPolska/coderack.git"
 set :scm, :git
 set :keep_releases, 10
 set :use_sudo, false
-set :rvm_ruby_string, '1.8.7'
+set :rvm_ruby_string, '1.9.3-p374'
 
 after 'deploy', 'deploy:cleanup'
 after 'deploy:migrations', 'deploy:cleanup'
