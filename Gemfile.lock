@@ -86,7 +86,7 @@ GEM
     multi_json (1.5.1)
     multi_xml (0.5.2)
     multipart-post (1.1.5)
-    mysql2 (0.2.18)
+    mysql2 (0.3.11)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-sftp (2.0.5)
@@ -188,7 +188,7 @@ DEPENDENCIES
   kaminari
   mocha
   mongrel (= 1.2.0.pre2)
-  mysql2 (~> 0.2.3)
+  mysql2
   nokogiri
   oauth (= 0.4.2)
   rack-noie

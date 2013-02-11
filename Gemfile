@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '~> 3.1.11'
-gem 'mysql2', '~> 0.2.3'
+gem 'mysql2'
 
 gem "warden"
 gem "warden-openid", "0.1.0"
