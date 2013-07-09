@@ -220,12 +220,13 @@ describe Middleware do
     m.details.strip.should == "<p>`This` is <b>spartaa!</b></p>"
   end
 
-  it "should say if middleware is a contest winner (top 3 places)" do
-    m = Middleware.gen
-    m.should_not be_a_contest_winner
-    [1, 2, 3].each { |i| m.contest_place = i; m.save; m.should be_a_contest_winner }
-    [4, 9, 666].each { |i| m.contest_place = i; m.save; m.should_not be_a_contest_winner }
-  end
+  it "should say if middleware is a contest winner (top 3 places)"
+#U# do
+#U#    m = Middleware.gen
+#U#    m.should_not be_a_contest_winner
+#U#    [1, 2, 3].each { |i| m.contest_place = i; m.save; m.should be_a_contest_winner }
+#U#    [4, 9, 666].each { |i| m.contest_place = i; m.save; m.should_not be_a_contest_winner }
+#U#  end
 
   it "should return contest winners and honorable mention" do
     middlewares = [1, 2, 3, 4, 5, 9, nil].map { |i| Middleware.gen :contest_place => i }

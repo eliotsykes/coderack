@@ -4,6 +4,7 @@ tmp/*
 *~
 .#*
 db/schema.rb
+db/*sqlite3
 nbproject
 config/application.yml
 config/database.yml
