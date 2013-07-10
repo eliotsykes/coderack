@@ -12,7 +12,6 @@ gem "RedCloth"
 gem "twitter"
 gem "oauth"
 gem "webrat"
-gem 'faker'
 gem 'bitly'
 gem 'kaminari'
 
