@@ -1,8 +1,6 @@
 source 'http://rubygems.org'
 
 gem 'rails', '~> 3.2.13'
-gem 'mysql2'
-gem 'sqlite3'
 
 gem "warden"
 gem "warden-openid", "0.1.0"
@@ -24,6 +22,9 @@ group :staging do
 end
 
 group :development, :test do
+  gem 'sqlite3'
+  gem 'mysql2'
+
   gem "rspec-rails"
   gem "factory_girl_rails"
   gem "mocha", :require => false
@@ -34,4 +35,9 @@ group :development do
   gem 'capistrano'
   gem 'capistrano-ext'
   gem "mongrel", "1.2.0.pre2"
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
 end
