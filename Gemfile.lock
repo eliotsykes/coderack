@@ -95,7 +95,7 @@ GEM
       net-ssh (>= 2.6.5)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
-    oauth (0.4.2)
+    oauth (0.4.7)
     oauth2 (0.8.1)
       faraday (~> 0.8)
       httpauth (~> 0.1)
@@ -175,7 +175,7 @@ GEM
     warden-openid (0.1.0)
       rack-openid
       warden
-    webrat (0.7.0)
+    webrat (0.7.3)
       nokogiri (>= 1.2.0)
       rack (>= 1.0)
       rack-test (>= 0.5.3)
@@ -196,17 +196,17 @@ DEPENDENCIES
   mongrel (= 1.2.0.pre2)
   mysql2
   nokogiri
-  oauth (= 0.4.2)
+  oauth
   pg
   rack-noie
   rack-openid
-  rack-revision-info (>= 0.3.7)
-  rails (~> 3.2.13)
+  rack-revision-info
+  rails (= 3.2.13)
   rails_12factor
   rdiscount
   rspec-rails
   sqlite3
   twitter
   warden
-  warden-openid (= 0.1.0)
-  webrat (= 0.7)
+  warden-openid
+  webrat

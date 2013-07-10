@@ -1,23 +1,23 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~> 3.2.13'
+gem 'rails', '3.2.13'
 
 gem "warden"
-gem "warden-openid", "0.1.0"
+gem "warden-openid"
 gem "rack-openid"
 
 gem "rack-noie", :require => "noie"
 gem "rdiscount"
 gem "RedCloth"
 gem "twitter"
-gem "oauth", "0.4.2"
-gem "webrat", "0.7"
+gem "oauth"
+gem "webrat"
 gem 'faker'
 gem 'bitly'
 gem 'kaminari'
 
 group :staging do
-  gem "rack-revision-info", ">= 0.3.7"
+  gem "rack-revision-info"
   gem "nokogiri"  # for rack-revision-info
 end
 
