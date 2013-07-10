@@ -31,6 +31,8 @@ group :development, :test do
   gem 'jslint_on_rails'
 end
 
+gem 'simplecov', :require => false, :group => :test
+
 group :development do
   gem 'capistrano'
   gem 'capistrano-ext'
