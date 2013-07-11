@@ -2,6 +2,8 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.2.13'
 
+ruby '2.0.0'
+
 gem "warden"
 gem "warden-openid"
 gem "rack-openid"
