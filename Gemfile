@@ -14,6 +14,7 @@ gem "oauth"
 gem "webrat"
 gem 'bitly'
 gem 'kaminari'
+gem 'figaro'
 
 group :staging do
   gem "rack-revision-info"

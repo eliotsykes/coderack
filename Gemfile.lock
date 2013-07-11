@@ -53,6 +53,9 @@ GEM
       railties (>= 3.0.0)
     faraday (0.8.7)
       multipart-post (~> 1.1)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     gem_plugin (0.2.3)
     highline (1.6.19)
     hike (1.2.3)
@@ -191,6 +194,7 @@ DEPENDENCIES
   capistrano
   capistrano-ext
   factory_girl_rails
+  figaro
   jslint_on_rails
   kaminari
   mocha

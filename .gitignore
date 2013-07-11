@@ -6,9 +6,11 @@ tmp/*
 db/schema.rb
 db/*sqlite3
 nbproject
-config/application.yml
 config/database.yml
 config/deploy/*
 .bundle
 coverage
 public/*/all.*
+
+# Ignore application configuration
+/config/application.yml
