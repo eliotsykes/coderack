@@ -9,8 +9,7 @@ class AppConfig
     if File.exists?(config_file)
       self.settings = YAML.load(File.read(config_file))[Rails.env].with_indifferent_access
     else
-      puts "NO APPLICATION.YML FILE. HOPE YOU DO NOT NEED ONE."
-      #U# raise "Please create a config file at config/application.yml (use application.yml.example as a template)."
+      raise "Please create a config file at config/application.yml (use application.yml.example as a template)."
     end
   end
 
