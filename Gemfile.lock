@@ -83,7 +83,7 @@ GEM
     mongrel (1.2.0.pre2)
       daemons (~> 1.0.10)
       gem_plugin (~> 0.2.3)
-    multi_json (1.8.0)
+    multi_json (1.8.1)
     multi_xml (0.5.5)
     multipart-post (1.2.0)
     mysql2 (0.3.13)
