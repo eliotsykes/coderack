@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.2.15'
 
-ruby '2.0.0'
+ruby '2.1.0'
 
 gem "warden"
 gem "warden-openid"
